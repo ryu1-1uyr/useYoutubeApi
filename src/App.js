@@ -8,8 +8,8 @@ console.log(key.key.key);
 
 
 
-// let youtube = new Youtube();
-// youtube.setKey(apiKey);
+let youtube = new Youtube();
+youtube.setKey(key.key.key);
 
 // AIzaSyA86pyToGLP4O6F07tuD7pqWUEI9o9JT5c
 //
@@ -37,10 +37,22 @@ class App extends Component {
 
     }
 
+    searchForYoutube(words){
+        youtube.search(words,5, function(error, result) {
+            if (error) {
+                console.log(error);
+            }
+            else {
+                console.log(JSON.stringify(result, null, 2));
+            }
+
+            })
+    };
 
 
     paramUpdate(param){
         console.log(param);
+        this.searchForYoutube(param)
     }
 
 
@@ -54,6 +66,8 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+
+
 
           <Inputs paramUpdate = {this.paramUpdate.bind(this)} />
 
