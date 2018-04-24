@@ -2,13 +2,16 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Youtube from 'youtube-node';
+import key from './key';
 
+console.log(key.key.key);
 
-const apiKey = "AIzaSyA86pyToGLP4O6F07tuD7pqWUEI9o9JT5c";//あとで環境変数から渡す書き方に変える
 
 
 // let youtube = new Youtube();
 // youtube.setKey(apiKey);
+
+// AIzaSyA86pyToGLP4O6F07tuD7pqWUEI9o9JT5c
 //
 // youtube.search('yunomi', 2, function(error, result) {
 //     if (error) {
