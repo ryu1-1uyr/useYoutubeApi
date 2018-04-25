@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-// import Youtube from 'youtube-node';
-import youtube from 'react-youtube';
 import key from './key';
 import jsonp from 'fetch-jsonp';
 
-const Youtube = youtube;
+
 
 
 class App extends Component {
@@ -21,7 +19,6 @@ class App extends Component {
         this.fetchList = [{id:"",title:"",img:""}, {id:"",title:"",img:""}, {id:"",title:"",img:""}];
 
         this.url = "https://www.googleapis.com/youtube/v3/search?type=video&" + "part=snippet&maxResults=3&q=" ;
-
         this.url_b = "&key=" + key.key.key;
             //url + word + key
         this.word = {word:""}
@@ -45,19 +42,8 @@ class App extends Component {
                     console.log(this.fetchList[i]["id"]);
                     console.log(this.fetchList[i]["img"])
                 }
-                this.setState({videoID:this.fetchList[0]["id"]})//強制的にsetStateしてる
+                this.setState({videoID:this.fetchList[0]["id"]})//強制的にsetStateして　初期処理にはとてもいいかも知れないw
             })
-
-
-        // youtube.search(words,5, function(error, result) {
-        //     if (error) {
-        //         console.log(error);
-        //     }
-        //     else {
-        //         console.log(JSON.stringify(result, null, 2));
-        //     }
-        //     })
-        //setStateできる
     };
 
 
